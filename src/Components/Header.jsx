@@ -1,11 +1,10 @@
 import Navber from "./Navber";
 import headerImg from "../../src/assets/header.png"
-import './Header.css'
 import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div style={{background: `url(${headerImg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}  className=" h-[85vh]" >
+        <div style={{background: `linear-gradient(0deg, rgb(13,27,40), rgba(255, 0, 150, 0.3)), url(${headerImg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}  className=" h-[85vh]" >
             <Navber></Navber>
            <div className="flex flex-col max-w-6xl h-[65vh] justify-center px-2 mx-auto">
             <div className="md:w-[40vw] text-center md:text-left space-y-3">
