@@ -1,0 +1,68 @@
+[
+    {
+      "id": "1",
+      "title": "Gaming Conventions",
+      "price": "$1300.00",
+      "description": "Gaming Conventions offer an immersive experience for gamers of all levels. Dive into the world of gaming, meet your favorite streamers, and explore the latest titles. These events are the ultimate gathering for gaming enthusiasts. Whether you're into action-packed shooters, immersive RPGs, or indie gems, there's something for everyone. Attend panel discussions with industry experts, gain insights into game development, and try cutting-edge VR experiences. Gaming Conventions are a must for anyone passionate about gaming.",
+      "img": "https://i.ibb.co/YyV6wFf/Gaming-Convention.webp"
+    },
+    {
+      "id": "2",
+      "title": "eSports Tournaments",
+      "price": "$1200.00",
+      "description": "eSports Tournaments are where competitive gaming reaches its pinnacle. Watch top teams battle for glory and a chance at the $300,000 prize pool in games like Dota 2 and Overwatch. These events aren't just for pros; they're an eSports extravaganza for fans too. Feel the adrenaline in the arena as you cheer for your favorite teams and meet eSports celebrities. Experience side events, hands-on demos, and gaming zones. eSports Tournaments offer an unforgettable eSports experience.",
+      "img": "https://i.ibb.co/gwK2Qhd/A1-ESPORTS-1-super-Jumbo.jpg"
+    },
+    {
+      "id": "3",
+      "title": "Tech Innovation Exhibitions",
+      "price": "$940.00",
+      "description": "Tech Innovation Exhibitions showcase the cutting edge of technology. Explore innovations in AI, robotics, green tech, and IoT. Engage with experts, witness live demos, and get hands-on with the latest tech products. These exhibitions are a celebration of human ingenuity and a glimpse into the future. Attend thought-provoking keynotes and workshops that inspire you to embrace the limitless possibilities of tech innovation.",
+      "img": "https://i.ibb.co/92pyFhS/IMG-0070.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Tech Conferences and Expos",
+      "price": "$800.00",
+      "description": "Tech Conferences and Expos are the premier destinations for tech enthusiasts and professionals. Dive deep into tech trends, explore AI, blockchain, and cybersecurity. Choose from a variety of conference tracks, attend hands-on workshops, and engage in meaningful discussions with like-minded individuals. Unlock career opportunities and business connections at exclusive networking events. These events are the catalysts for your tech journey.",
+      "img": "https://i.ibb.co/9qp4sWr/alexandre-pellaes-6v-Ajp0psc-X0-unsplash-1-1.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Hackathons",
+      "price": "$500.00",
+      "description": "Hackathons are the playgrounds for coding enthusiasts and aspiring developers. Compete in intense 24-hour coding challenges, collaborate with like-minded peers, and showcase your skills. These events are not just about coding; they're about creativity, problem-solving, and teamwork. With access to mentors and industry experts, you can learn, experiment, and transform your ideas into reality. Join a Hackathon and code your way to success.",
+      "img": "https://i.ibb.co/Jqphxb8/Cleveland-Medical-Hackathon.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Game Development Conferences",
+      "price": "$700.00",
+      "description": "Game Development Conferences are the ultimate hub for game developers, artists, and enthusiasts. Learn from industry experts, attend workshops on game design, programming, art, and animation, and network with fellow game creators. These events offer a unique opportunity to level up your game development skills. Whether you're an aspiring indie developer or a seasoned pro, Game Development Conferences provide valuable insights and connections in the world of gaming.",
+      "img": "https://i.ibb.co/3FDt2st/esports-awards.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Mobile Gaming Events",
+      "price": "$900.00",
+      "description": "Mobile Gaming Events bring the excitement of mobile gaming to the forefront. Play the latest mobile games, compete in thrilling tournaments, and meet mobile game developers. These events cater to casual gamers and competitive players alike. Immerse yourself in the world of mobile gaming and experience the thrill of gaming on the go. Mobile Gaming Events are the ultimate destination for mobile gaming enthusiasts.",
+      "img": "https://i.ibb.co/yg1mhD5/2019041067afc74ab5aef5f07e4f3eb529f4723a-1.jpg"
+    },
+    {
+        "id": "8",
+        "title": "Virtual Reality Expos",
+        "price": "$850.00",
+        "description": "Step into the world of Virtual Reality (VR) at Virtual Reality Expos! Explore the latest advancements in VR technology, from immersive gaming experiences to virtual tours of exotic locations. Try cutting-edge VR headsets, interact with VR developers, and discover how VR is transforming various industries, including gaming, healthcare, and education. Dive into a virtual world of possibilities at Virtual Reality Expos and see the future through a different lens.",
+        "img": "https://i.ibb.co/0cMVckz/Virtual-Reality-Events.webp"
+      },
+      {
+        "id": "9",
+        "title": "AI and Robotics Symposium",
+        "price": "$750.00",
+        "description": "The AI and Robotics Symposium is a convergence of innovation in artificial intelligence and robotics. Join experts, researchers, and industry leaders to explore the latest breakthroughs in AI algorithms, machine learning, and advanced robotics. Attend thought-provoking sessions, witness live AI and robotics demonstrations, and engage in discussions about the impact of these technologies on society and industry. Dive deep into the future of automation, intelligent systems, and the ever-expanding capabilities of AI and robotics.",
+        "img": "https://i.ibb.co/YkDhpDJ/robotics0418.jpg"
+      }
+      
+      
+  ]
+  
