@@ -1,3 +1,4 @@
+import Client from "../Components/Client";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Slideservice from "../Components/Slideservice";
@@ -36,6 +37,14 @@ const Home = () => {
             </div>
         </div>
        </div>
+
+        {/* Client review area  */}
+
+        <div className="max-w-6xl py-10 mx-auto">
+            <Client>
+
+            </Client>
+        </div>
 
       </div>
       <Footer></Footer>
