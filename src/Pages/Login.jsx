@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navber from "../Components/Navber";
 import { useContext, useState } from "react";
@@ -11,7 +11,9 @@ const Login = () => {
   const [open, setOpen] = useState('!open')
   const [errer, setError] = useState('')
 
-  const {signInUser, signInwithGoogle} = useContext(Authinfo)
+  const {signInUser, signInwithGoogle} = useContext(Authinfo);
+
+  const navigate = useNavigate()
 
   const handleLoginSubmit = e => {
     e.preventDefault()
@@ -24,6 +26,7 @@ const Login = () => {
     signInUser(email, password)
     .then(result => {
       console.log(result.user);
+      navigate('/')
     })
     .catch(errer => {
       console.log(errer);
@@ -39,6 +42,7 @@ const Login = () => {
     signInwithGoogle(googleProvider)
     .then(result => {
       console.log(result.user);
+      navigate('/')
     })
     .catch(errer => {
       console.log(errer.message);

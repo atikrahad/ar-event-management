@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navber from "../Components/Navber";
 import { useContext, useState } from "react";
 import { Authinfo } from "../Sharedcomponent/Authprovider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../Firebase/Firebase.config";
 
 
 
@@ -12,13 +14,15 @@ const Register = () => {
   const [open, setOpen] = useState('!open')
   const [error, setError] = useState('')
 
+  const navigate = useNavigate()
+
   const handleReigsterSubmit = e => {
     e.preventDefault()
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const file = e.target.file.value;
-    console.log(name, email, password, file);
+    
+    console.log(name, email, password);
 
 
     setError('')
@@ -35,6 +39,17 @@ const Register = () => {
     createUser(email, password)
     .then(result => {
       console.log(result.user);
+      navigate('/')
+      updateProfile(auth.currentUser, {
+        displayName: `${name}`,
+        
+      })
+      .then(()=>{
+
+      })
+      .catch(error => {
+        console.log(error.message);
+      })
     })
     .catch(errer => {
       const errorMessage = errer.code.split('/');
@@ -95,14 +110,7 @@ const Register = () => {
                   </div>
                   
                 </div>
-                <div className="form-control">
-                  <input
-                    type="file"
-                    name="file"
-                    className="rounded-md text-[#ffffffb6]"
-                    required
-                  />
-                </div>
+                
                 <p className="text-red-500">{error}</p>
                 <div className="form-control mt-2">
                   <input
