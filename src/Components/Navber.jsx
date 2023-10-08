@@ -1,13 +1,24 @@
 import { NavLink } from "react-router-dom";
 import logoImg from '../assets/logo.png'
+import { useContext } from "react";
+import { Authinfo } from "../Sharedcomponent/Authprovider";
 
 const Navber = () => {
+  const {user, logOut} = useContext(Authinfo)
 
     const navLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/services'>Services</NavLink></li>
         <li><NavLink to='/about'>About Us</NavLink></li>
     </>
+
+    const handleLogout = ()=> {
+      logOut()
+      .then()
+      .catch(error => {
+        console.log(error.message);
+      })
+    }
   return (
     <div className="max-w-6xl mx-auto navbar ">
       <div className="navbar-start">
@@ -48,7 +59,9 @@ const Navber = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <NavLink className='font-bold bg-gradient-to-r from-red-500 to-cyan-400 py-2 rounded-md px-4' to='/login'>Login</NavLink>
+        {
+          user? <button onClick={handleLogout} className="font-bold bg-gradient-to-r from-red-500 to-cyan-400 py-2 rounded-md px-4">Logout</button>:<NavLink className='font-bold bg-gradient-to-r from-red-500 to-cyan-400 py-2 rounded-md px-4' to='/login'>Login</NavLink>
+        }
       </div>
     </div>
   );

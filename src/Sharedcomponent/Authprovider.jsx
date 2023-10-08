@@ -1,9 +1,13 @@
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
+import { auth } from "../Firebase/Firebase.config";
 
 export const Authinfo = createContext()
 const Authprovider = ({children}) => {
     const [data, setData] = useState([]);
     const [client, setClient] = useState([]);
+    const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
         fetch('Event.json')
@@ -15,9 +19,47 @@ const Authprovider = ({children}) => {
         .then(res => res.json())
         .then(datas => setClient(datas))
     },[])
+
+    const createUser = (email, password) => {
+        setLoading(true)
+       return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    const signInUser = (email, password) => {
+        setLoading(true)
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+    const signInwithGoogle = provider => {
+        setLoading(true)
+        return signInWithPopup(auth, provider)
+    }
+
+
+    useEffect(()=>{
+        const unSubscribe = onAuthStateChanged(auth, (curentUser)=>{
+            setUser(curentUser);
+            setLoading(false)
+        })
+        return ()=> {
+            unSubscribe()
+        }
+    },[])
+
+    const logOut = ()=> {
+        setLoading(true)
+        return signOut(auth)
+    }
+
+    console.log(user);
     const Info = {
         data,
-        client
+        client,
+        createUser,
+        signInUser,
+        signInwithGoogle,
+        user,
+        logOut,
+        loading
     }
     return (
         <Authinfo.Provider value={Info}>

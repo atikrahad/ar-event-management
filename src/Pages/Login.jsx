@@ -1,8 +1,53 @@
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navber from "../Components/Navber";
+import { useContext, useState } from "react";
+import { Authinfo } from "../Sharedcomponent/Authprovider";
+import { GoogleAuthProvider } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+
+  const [open, setOpen] = useState('!open')
+  const [errer, setError] = useState('')
+
+  const {signInUser, signInwithGoogle} = useContext(Authinfo)
+
+  const handleLoginSubmit = e => {
+    e.preventDefault()
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    
+
+    setError('')
+
+    signInUser(email, password)
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(errer => {
+      console.log(errer);
+      setError(errer.message)
+    })
+
+    
+  }
+
+
+  const googleProvider = new GoogleAuthProvider();
+  const handleGooglesignUp = () => {
+    signInwithGoogle(googleProvider)
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(errer => {
+      console.log(errer.message);
+    })
+  }
+
+  const handleView = open => {
+    setOpen(open)
+  }
   return (
     <div className="bg-gradient-to-r from-[#0d1b28] via-[#0d1b28] to-[rgb(13,27,40)]">
       <Navber></Navber>
@@ -15,31 +60,34 @@ const Login = () => {
               </h1>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
-              <form className="card-body">
+
+              <form onSubmit={handleLoginSubmit} className="card-body">
                 <div className="form-control">
                   <input
                     type="email"
                     placeholder="email"
+                    name="email"
                     className="input rounded-md text-[#ffffffda]  bg-transparent border-b-2 border-cyan-600"
                     required
                   />
                 </div>
-                <div className="form-control">
+                <div className="form-control relative">
                   <input
-                    type="password"
+                    type={open? 'password': 'text'}
                     placeholder="password"
+                    name="password"
                     className="input rounded-md text-[#ffffffda]  bg-transparent border-b-2 border-cyan-600"
                     required
                   />
-                  <label className="label">
-                    <a
-                      href="#"
-                      className="label-text-alt text-[#ffffffc5] link link-hover"
-                    >
-                      Forgot password?
-                    </a>
-                  </label>
+                  <div onClick={()=>handleView(!open)} className="absolute right-2 text-[#ffffff9a] top-1/3">
+                    {
+                      open? <FaEye></FaEye>:<FaEyeSlash></FaEyeSlash>
+                    }
+                  </div>
+                  
                 </div>
+
+                <p className="text-red-600">{errer}</p>
                 <div className="form-control mt-2">
                   <input
                     type="submit"
@@ -52,7 +100,7 @@ const Login = () => {
                 <div className="border-t border-dotted border-cyan-400 border-b w-full"></div><span className="text-center text-white px-3">or</span> <div className="border-t border-b border-dotted border-cyan-400 w-full"></div>
               </div>
               </form>
-                  <button className="btn bg-white -mt-6 rounded-md mx-8 font-bold border-none">
+                  <button onClick={handleGooglesignUp} className="btn bg-white -mt-6 rounded-md mx-8 font-bold border-none">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       x="0px"

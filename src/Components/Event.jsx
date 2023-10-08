@@ -1,6 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './Event.css'
 const Event = ({ data }) => {
   const {img, title, price,description} = data;
+  const navigate = useNavigate()
+  const handleDetailsCliuck = data => {
+        navigate("/eventdetails", {state: data})
+  }
   return (
     <div>
       
@@ -19,7 +24,7 @@ const Event = ({ data }) => {
           <p className='text-[#ffffff88] overflow-hidden text-justify text-ellipsis'>{description}</p>
           </div>
           <div className="card-actions">
-            <button className="py-1 px-3 rounded border-none bg-gradient-to-r from-red-500 font-bold to-cyan-400">Read More</button>
+            <button onClick={()=>handleDetailsCliuck(data)} className="py-1 px-3 rounded border-none bg-gradient-to-r from-red-500 font-bold to-cyan-400">Read More</button>
           </div>
         </div>
       </div>

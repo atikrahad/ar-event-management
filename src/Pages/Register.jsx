@@ -1,9 +1,52 @@
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navber from "../Components/Navber";
+import { useContext, useState } from "react";
+import { Authinfo } from "../Sharedcomponent/Authprovider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 
 const Register = () => {
+  const {createUser} = useContext(Authinfo)
+  const [open, setOpen] = useState('!open')
+  const [error, setError] = useState('')
+
+  const handleReigsterSubmit = e => {
+    e.preventDefault()
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const file = e.target.file.value;
+    console.log(name, email, password, file);
+
+
+    setError('')
+    if(password.length < 6){
+      return setError('Password should be at least 6 characters')
+    }
+    else if(!/[A-Z]/.test(password)){
+      return setError('Password should be a Capital latter')
+    }
+    else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)){
+      return setError('Password should be a special character')
+    }
+
+    createUser(email, password)
+    .then(result => {
+      console.log(result.user);
+    })
+    .catch(errer => {
+      const errorMessage = errer.code.split('/');
+      const message = errorMessage.slice(1, errorMessage.length)
+      setError(message.join())
+    })
+
+  }
+  const handlePassView = open => {
+    setOpen(open)
+  }
+  
     return (
         <div className="bg-gradient-to-r from-[#0d1b28] via-[#0d1b28] to-[rgb(13,27,40)]">
             <Navber></Navber>
@@ -17,11 +60,13 @@ const Register = () => {
               </h1>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
-              <form className="card-body">
+
+              <form onSubmit={handleReigsterSubmit} className="card-body">
                 <div className="form-control">
                   <input
                     type="text"
                     placeholder="name"
+                    name="name"
                     className="input rounded-md text-[#ffffffda]  bg-transparent border-b-2 border-cyan-600"
                     required
                   />
@@ -30,27 +75,35 @@ const Register = () => {
                   <input
                     type="email"
                     placeholder="email"
+                    name="email"
                     className="input rounded-md text-[#ffffffda]  bg-transparent border-b-2 border-cyan-600"
                     required
                   />
                 </div>
-                <div className="form-control">
+                <div className="form-control relative">
                   <input
-                    type="password"
+                    type={open? 'password': 'text'}
                     placeholder="password"
+                    name="password"
                     className="input rounded-md text-[#ffffffda]  bg-transparent border-b-2 border-cyan-600"
                     required
                   />
+                  <div onClick={()=>handlePassView(!open)} className="absolute right-2 text-[#ffffff9a] top-1/3">
+                    {
+                      open? <FaEye></FaEye>:<FaEyeSlash></FaEyeSlash>
+                    }
+                  </div>
                   
                 </div>
                 <div className="form-control">
                   <input
                     type="file"
-                    placeholder="email"
+                    name="file"
                     className="rounded-md text-[#ffffffb6]"
                     required
                   />
                 </div>
+                <p className="text-red-500">{error}</p>
                 <div className="form-control mt-2">
                   <input
                     type="submit"

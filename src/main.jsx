@@ -12,6 +12,8 @@ import About from './Pages/About'
 import Login from './Pages/Login'
 import Authprovider from './Sharedcomponent/Authprovider'
 import Register from './Pages/Register'
+import EventDetails from './Pages/EventDetails'
+import Privateroute from './Sharedcomponent/Privateroute'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/services',
-        element: <Services></Services>
+        element: <Privateroute><Services></Services></Privateroute>
       },
       {
         path: '/about',
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/eventdetails',
+        element: <Privateroute><EventDetails></EventDetails></Privateroute>
       }
     ]
   }
