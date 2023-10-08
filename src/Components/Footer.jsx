@@ -10,15 +10,15 @@ const Footer = () => {
       }}
       className="py-5"
     >
-      <footer className="footer py-10 max-w-6xl mx-auto text-[#ffffffb2]">
-        <nav>
+      <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 max-w-6xl mx-auto text-[#ffffffb2]">
+        <nav className="flex flex-col">
           <header className=" font-bold text-xl text-[#ffffffd3]">Services</header>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </nav>
-        <nav>
+        <nav className="flex flex-col">
           <header className=" font-bold text-xl text-[#ffffffd3]">Company</header>
           <Link to='/about' className="link link-hover">About us</Link>
           <a className="link link-hover">Contact</a>
