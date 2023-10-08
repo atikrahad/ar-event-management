@@ -6,6 +6,8 @@ import { Authinfo } from "../Sharedcomponent/Authprovider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/Firebase.config";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -39,6 +41,16 @@ const Register = () => {
     createUser(email, password)
     .then(result => {
       console.log(result.user);
+      toast.success('Account created', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate('/')
       updateProfile(auth.currentUser, {
         displayName: `${name}`,
@@ -130,7 +142,9 @@ const Register = () => {
 
             </div>
             <Footer></Footer>
+            <ToastContainer></ToastContainer>
         </div>
+      
     );
 };
 

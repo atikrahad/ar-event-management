@@ -5,6 +5,8 @@ import Header from "../Components/Header";
 import Slideservice from "../Components/Slideservice";
 import whyImg from "../assets/why.png"
 import { Authinfo } from "../Sharedcomponent/Authprovider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   const {loading} = useContext(Authinfo)
@@ -62,6 +64,7 @@ const Home = () => {
 
       </div>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

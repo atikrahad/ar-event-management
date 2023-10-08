@@ -70,7 +70,7 @@ console.log(user);
       <div className="navbar-end">
         {user ? (
           <>
-            <Link className="w-10 mr-5 rounded-full">
+            <Link to='/profile' className="w-10 mr-5 rounded-full">
               {
                 user.photoURL? <img className="w-full rounded-full" src={user.photoURL} alt="" />:<FaUserCircle className="text-4xl text-white"></FaUserCircle>
               }
