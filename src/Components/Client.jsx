@@ -29,7 +29,7 @@ const Client = () => {
     >
       {client.map((data) => (
         <SwiperSlide className="relative" key={data.id}>
-          <div className="w-full rounded-md h-96 bg-slate-500 p-10">
+          <div className="w-full rounded-md h-96 space-y-3 bg-slate-500 p-10">
             <div className=" flex items-center gap-5">
             <img src={data.img} className="w-16 rounded-full h-16" alt="" />
             <div>

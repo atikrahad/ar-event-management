@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import footerImg from "../assets/body.png";
 const Footer = () => {
   return (
@@ -9,23 +10,23 @@ const Footer = () => {
       }}
       className="py-5"
     >
-      <footer className="footer py-5 max-w-6xl mx-auto text-[#ffffffb2]">
+      <footer className="footer py-10 max-w-6xl mx-auto text-[#ffffffb2]">
         <nav>
-          <header className="footer-title text-white">Services</header>
+          <header className=" font-bold text-xl text-[#ffffffd3]">Services</header>
           <a className="link link-hover">Branding</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </nav>
         <nav>
-          <header className="footer-title text-white">Company</header>
-          <a className="link link-hover">About us</a>
+          <header className=" font-bold text-xl text-[#ffffffd3]">Company</header>
+          <Link to='/about' className="link link-hover">About us</Link>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </nav>
         <nav>
-          <header className="footer-title text-white">Social</header>
+          <header className=" font-bold text-xl text-[#ffffffd3]">Social</header>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg
@@ -63,7 +64,8 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-      <p className="text-center text-[#ffffff88] ">copyright @ by 2023</p>
+      <hr className="max-w-6xl mx-auto" />
+      <p className="text-center mt-3 -mb-2 text-[#ffffff88] ">copyright @ by 2023</p>
     </div>
   );
 };
