@@ -36,7 +36,7 @@ console.log(user);
       });
   };
   return (
-    <div className="max-w-6xl mx-auto navbar ">
+    <div className="max-w-6xl mx-auto navbar " >
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
