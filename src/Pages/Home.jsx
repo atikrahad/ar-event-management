@@ -60,7 +60,7 @@ const Home = () => {
             <div className="max-w-md md:max-w-4xl lg:max-w-6xl gap-5 pb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mx-auto">
               <div
                 className="p-2 space-y-2 cardstyle "
-                data-aos="zoom-out-right"
+                data-aos="zoom-out-left"
                 data-aos-easing="linear"
                 data-aos-duration="1000"
               >
@@ -76,7 +76,7 @@ const Home = () => {
               </div>
               <div
                 className="p-2 space-y-2 cardstyle "
-                data-aos="zoom-out-right"
+                data-aos="zoom-out-left"
                 data-aos-easing="linear"
                 data-aos-duration="1000"
               >
@@ -106,7 +106,7 @@ const Home = () => {
               </div>
               <div
                 className="p-2 space-y-2 cardstyle "
-                data-aos="zoom-out-left"
+                data-aos="zoom-out-right"
                 data-aos-easing="linear"
                 data-aos-duration="1000"
               >
@@ -125,7 +125,7 @@ const Home = () => {
           <div className="grid max-w-6xl mx-auto gap-5 grid-cols-1  lg:grid-cols-5">
             <div
               className="col-span-2 h-full  bg-gradient-to-r from-[#0d1b28] via-[#0d1b28] to-[rgb(13,27,40)]"
-              data-aos="zoom-out-right"
+              data-aos="zoom-out-left"
               data-aos-easing="linear"
               data-aos-duration="1000"
             >
@@ -134,7 +134,7 @@ const Home = () => {
 
             <div
               className="lg:col-span-3 lg:pl-28 space-y-4 from-[#0d1b28] via-[#0d1b28] to-[rgb(13,27,40)]"
-              data-aos="zoom-out-left"
+              data-aos="zoom-out-right"
               data-aos-easing="linear"
               data-aos-duration="1000"
             >
@@ -162,9 +162,6 @@ const Home = () => {
 
         <div
           className="max-w-md md:max-w-4xl lg:max-w-6xl py-10 mx-auto"
-          data-aos="zoom-out-up"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
         >
           <h1 className="text-center text-3xl font-bold py-5 text-[#ffffffd2]">
             Client reviews

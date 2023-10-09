@@ -17,9 +17,7 @@ const Footer = () => {
       <footer className="flex gap-4 flex-wrap py-10 max-w-6xl justify-center md:justify-between mx-auto text-[#ffffffb2]">
         <nav
           className="flex md:text-left  flex-col"
-          data-aos="zoom-out-right"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
+          
         >
           <header className=" font-bold text-xl text-[#ffffffd3]">
             Services
@@ -30,9 +28,7 @@ const Footer = () => {
         </nav>
         <nav
           className="flex md:text-left  flex-col"
-          data-aos="zoom-out-up"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
+          
         >
           <header className=" font-bold text-xl text-[#ffffffd3]">
             Company
@@ -46,9 +42,7 @@ const Footer = () => {
         </nav>
         <nav
           className=""
-          data-aos="zoom-out-left"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
+          
         >
           <header className=" font-bold text-xl text-[#ffffffd3]">
             Social
