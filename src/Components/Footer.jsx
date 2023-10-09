@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import footerImg from "../assets/body.png";
+import { useContext } from "react";
+import { Authinfo } from "../Sharedcomponent/Authprovider";
+import Catagory from "./Catagory";
 const Footer = () => {
+
+  const {data} = useContext(Authinfo)
   return (
     <div
       style={{
@@ -10,24 +15,24 @@ const Footer = () => {
       }}
       className="py-5"
     >
-      <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10 max-w-6xl mx-auto text-[#ffffffb2]">
-        <nav className="flex flex-col">
+      <footer className="flex gap-4 flex-wrap py-10 max-w-6xl justify-center md:justify-between mx-auto text-[#ffffffb2]">
+        <nav className="flex md:text-left  flex-col">
           <header className=" font-bold text-xl text-[#ffffffd3]">Services</header>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          {
+            data.map(item => <Catagory key={item.id} item={item}></Catagory>)
+          }
+          
         </nav>
-        <nav className="flex flex-col">
+        <nav className="flex md:text-left  flex-col">
           <header className=" font-bold text-xl text-[#ffffffd3]">Company</header>
           <Link to='/about' className="link link-hover">About us</Link>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </nav>
-        <nav>
+        <nav className="">
           <header className=" font-bold text-xl text-[#ffffffd3]">Social</header>
-          <div className="grid grid-flow-col gap-4">
+          <div className="flex space-y-3 py-3 flex-col">
             <a>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

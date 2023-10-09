@@ -16,10 +16,12 @@ import EventDetails from './Pages/EventDetails'
 import Privateroute from './Sharedcomponent/Privateroute'
 import Profile from './Pages/Profile'
 import Selectedevent from './Pages/Selectedevent'
+import Errorpage from './Pages/Errorpage'
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root></Root>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: '/',

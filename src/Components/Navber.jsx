@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import logoImg from "../assets/logo.png";
 import { useContext } from "react";
 import { Authinfo } from "../Sharedcomponent/Authprovider";
 import { FaUserCircle } from "react-icons/fa";
@@ -71,7 +70,7 @@ console.log(user);
       <div className="navbar-end">
         {user ? (
           <>
-            <Link to='/profile' className="w-10  rounded-full">
+            <Link to='/profile' className="w-10 pr-1 rounded-full">
               {
                 user.photoURL? <img className="w-full rounded-full" src={user.photoURL} alt="" />:<FaUserCircle className="text-4xl text-white"></FaUserCircle>
               }

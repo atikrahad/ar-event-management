@@ -5,6 +5,8 @@ import { useContext, useState } from "react";
 import { Authinfo } from "../Sharedcomponent/Authprovider";
 import { GoogleAuthProvider } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
@@ -14,6 +16,7 @@ const Login = () => {
   const {signInUser, signInwithGoogle} = useContext(Authinfo);
 
   const navigate = useNavigate()
+  const {user} = useContext(Authinfo)
 
   const handleLoginSubmit = e => {
     e.preventDefault()
@@ -22,6 +25,19 @@ const Login = () => {
     
 
     setError('')
+    if(user){
+      toast.error('Already loged in', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+      return 
+    }
 
     signInUser(email, password)
     .then(result => {
@@ -30,7 +46,7 @@ const Login = () => {
     })
     .catch(errer => {
       console.log(errer);
-      setError(errer.message)
+      setError("Invalid email/password")
     })
 
     
@@ -39,6 +55,21 @@ const Login = () => {
 
   const googleProvider = new GoogleAuthProvider();
   const handleGooglesignUp = () => {
+
+    if(user){
+      toast.error('Already loged in', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+      return 
+    }
+
     signInwithGoogle(googleProvider)
     .then(result => {
       console.log(result.user);
@@ -137,6 +168,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );
