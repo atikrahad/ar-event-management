@@ -36,7 +36,7 @@ const Slideservice = () => {
         <SwiperSlide className="relative" key={data.id}>
           <div className="absolute left-[10%] opacity-50 rounded-md bg-slate-600 flex flex-col justify-center items-center top-[10%] bottom-[10%] right-[10%]"></div>
           <div className="absolute space-y-3 top-[10%] left-[10%] right-[10%] bottom-[10%] flex flex-col items-center justify-center text-center">
-            <h1 className="text-3xl z- text-center  text-black font-bold">
+            <h1 className="text-lg lg:text-3xl z- text-center  text-black font-bold">
               {data.title}
             </h1>
             <button

@@ -17,11 +17,11 @@ const About = () => {
             </div>
       </div>
       </div>
-      <div className="grid grid-cols-1 items-center md:gap-10 max-w-6xl mx-auto py-10   md:grid-cols-2">
+      <div className="grid grid-cols-1 items-center md:gap-10 max-w-md md:max-w-4xl lg:max-w-6xl mx-auto py-10   md:grid-cols-2">
         <div><img src={secondImg} alt="" /></div>
-        <div className="text-[#ffffff93] space-y-3">
+        <div className="text-[#ffffff93] px-2 space-y-3">
         <h1 className="text-4xl text-[#ffffffc4]">Our Mission</h1>
-        <p>At [Your Company Name], our mission is to bridge the gap between technology enthusiasts and gaming aficionados through meticulously organized events. We aim to:</p>
+        <p>At EventTechGamer, our mission is to bridge the gap between technology enthusiasts and gaming aficionados through meticulously organized events. We aim to:</p>
         <ul className="pl-5 list-disc">
             <li >Inspire and educate individuals about the latest tech innovations and gaming trends.</li>
             <li>Inspire and educate individuals about the latest tech innovations and gaming trends.</li>
@@ -29,7 +29,7 @@ const About = () => {
         </ul>
         </div>
       </div>
-      <div className="max-w-6xl space-y-10 py-16 mx-auto">
+      <div className="max-w-md md:max-w-4xl px-1 lg:max-w-6xl space-y-10 py-16 mx-auto">
         <h1 className="text-[#ffffffcc] font-bold text-4xl text-center">Our facilities like this</h1>
         <div className="grid py-5 gap-5 md:grid-cols-2 grid-cols-1">
             <div className="flex cardstyle flex-col items-center justify-center p-5">

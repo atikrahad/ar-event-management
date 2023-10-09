@@ -43,7 +43,7 @@ console.log(user);
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 text-white w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -58,12 +58,12 @@ console.log(user);
           </label>
           <ul
             tabIndex={0}
-            className="menu text-white menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu text-white menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#0d1b28] rounded-box w-52"
           >
             {navLinks}
           </ul>
         </div>
-        <img className="w-60" src={logoImg} alt="" />
+        <h1 className="text-red-500 text-3xl">Event<span className="text-cyan-400 text-2xl">TG</span></h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu text-white menu-horizontal px-1">{navLinks}</ul>
@@ -71,7 +71,7 @@ console.log(user);
       <div className="navbar-end">
         {user ? (
           <>
-            <Link to='/profile' className="w-10 mr-5 rounded-full">
+            <Link to='/profile' className="w-10  rounded-full">
               {
                 user.photoURL? <img className="w-full rounded-full" src={user.photoURL} alt="" />:<FaUserCircle className="text-4xl text-white"></FaUserCircle>
               }

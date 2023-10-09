@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div style={{background: `linear-gradient(0deg, rgb(13,27,40), rgba(255, 0, 150, 0.3)), url(${headerImg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}  className=" h-[85vh]" >
+        <div style={{background: `linear-gradient(0deg, rgb(13,27,40), rgba(255, 0, 150, 0.3)), url(${headerImg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}  className="" >
             <Navber></Navber>
-           <div className="flex flex-col max-w-6xl h-[65vh] justify-center px-2 mx-auto">
+           <div className="flex flex-col max-w-md md:max-w-4xl lg:max-w-6xl py-10 justify-center px-2 mx-auto">
             <div className="md:w-[40vw] text-center md:text-left space-y-3">
                 <h3 className="text-xl  md:text-2xl font-bold text-white">Welcome to the Ultimate </h3>
                 <h1 className="text-white font-bold text-2xl md:text-3xl">Tech and Gaming Event Experience!</h1>

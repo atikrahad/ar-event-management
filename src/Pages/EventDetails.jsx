@@ -41,18 +41,20 @@ const EventDetails = () => {
       <div className="grid max-w-6xl mx-auto grid-cols-1">
         <div className="">
 
-          <div className="card w-full h-[100vh] bg-base-100 rounded shadow-xl">
+          <div className="card w-full  bg-base-100 rounded shadow-xl">
             <figure>
-              <img className="w-full rounded"
+              <img className="w-full h-60 md:h-auto rounded"
                 src={img}
-                alt="Shoes"
+                alt=""
               />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{title}
                 
               </h2>
-              <p>{description}</p>
+              <div className="">
+              <p className="text-justify">{description}</p>
+              </div>
               <div className="card-actions justify-stard">
                 <div className="bg-gradient-to-r from-red-500 to-cyan-400 text-white rounded py-2 px-3">Booking Price: {price}</div>
                 <button onClick={handlSekectevent} className="bg-gradient-to-r from-red-500 to-cyan-400 text-white rounded py-2 px-3 font-bold">Book The Event</button>
