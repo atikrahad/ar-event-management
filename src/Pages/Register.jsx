@@ -34,6 +34,7 @@ const Register = () => {
     else if(!/[A-Z]/.test(password)){
       return setError('Password should be a Capital latter')
     }
+    // eslint-disable-next-line no-useless-escape
     else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)){
       return setError('Password should be a special character')
     }

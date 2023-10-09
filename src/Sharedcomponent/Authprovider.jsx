@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/Firebase.config";
+import PropTypes from 'prop-types';
 
 export const Authinfo = createContext()
 const Authprovider = ({children}) => {
@@ -8,6 +9,7 @@ const Authprovider = ({children}) => {
     const [client, setClient] = useState([]);
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [bookedevent, setBookedevent] = useState([])
 
     useEffect(()=>{
         fetch('Event.json')
@@ -59,7 +61,9 @@ const Authprovider = ({children}) => {
         signInwithGoogle,
         user,
         logOut,
-        loading
+        loading,
+        setBookedevent,
+        bookedevent
     }
     return (
         <Authinfo.Provider value={Info}>
@@ -70,5 +74,7 @@ const Authprovider = ({children}) => {
         </Authinfo.Provider>
     );
 };
-
+Authprovider.propTypes = {
+    children: PropTypes.node
+}
 export default Authprovider;

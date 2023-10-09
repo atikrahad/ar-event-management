@@ -12,11 +12,12 @@ console.log(user);
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      {user && (
+      {user && <>
         <li>
           <NavLink to="/services">Services</NavLink>
         </li>
-      )}
+          <li><NavLink to="/selectedevent">Selected</NavLink></li>
+      </>}
       <li>
         <NavLink to="/about">About Us</NavLink>
       </li>

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './Event.css'
+import PropTypes from 'prop-types';
 const Event = ({ data }) => {
   const {img, title, price,description} = data;
   const navigate = useNavigate()
@@ -32,5 +33,7 @@ const Event = ({ data }) => {
     </div>
   );
 };
-
+Event.propTypes = {
+  data: PropTypes.array.isRequired
+}
 export default Event;

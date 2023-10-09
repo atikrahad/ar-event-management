@@ -15,6 +15,7 @@ import Register from './Pages/Register'
 import EventDetails from './Pages/EventDetails'
 import Privateroute from './Sharedcomponent/Privateroute'
 import Profile from './Pages/Profile'
+import Selectedevent from './Pages/Selectedevent'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: '/services',
         element: <Privateroute><Services></Services></Privateroute>
+      },
+      {
+        path: '/selectedevent',
+        element: <Privateroute><Selectedevent></Selectedevent></Privateroute>
       },
       {
         path: '/about',
