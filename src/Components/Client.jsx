@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Authinfo } from "../Sharedcomponent/Authprovider";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import {EffectCoverflow, Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow"
 
 
 const Client = () => {
@@ -12,24 +13,36 @@ const Client = () => {
   console.log(client);
   return (
     <Swiper
-      spaceBetween={30}
-      slidesPerView={3}
+    effect={'coverflow'}
+    grabCursor={true}
+    
+    
+    slidesPerView={'auto'}
+      
       centeredSlides={true}
       loop={true}
       autoplay={{
-        delay: 3500,
+        delay: 4500,
         disableOnInteraction: false,
       }}
       pagination={{
         clickable: true,
       }}
+      coverflowEffect={
+        {
+          rotate: 0,
+          stretch: 0,
+          depth: 800,
+          modifier: 2.5
+        }
+      }
       navigation={true}
-      modules={[Autoplay, Pagination, Navigation]}
+      modules={[EffectCoverflow, Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
       {client.map((data) => (
         <SwiperSlide className="relative" key={data.id}>
-          <div className="w-full rounded-md h-96 space-y-3 bg-slate-500 p-10">
+          <div className="max-w-sm md:max-w-2xl mx-auto rounded-md h-96 space-y-3 bg-slate-500 p-10">
             <div className=" flex items-center gap-5">
             <img src={data.img} className="w-16 rounded-full h-16" alt="" />
             <div>
